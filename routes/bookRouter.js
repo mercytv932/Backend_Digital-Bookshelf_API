@@ -35,4 +35,22 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+router.put("/:id", async (req, res) => {
+  try {
+    const book = await Book.findByIdAndUpdate(
+      req.params.id, // which book to update
+      req.body, // the new information
+      { new: true }, //gives us the updated book
+    );
+
+    if (!book) {
+      return res.status(404).json({ message: "Book not found" });
+    }
+
+    res.json(book);
+  } catch (error) {
+    res.status(500).json({ message: "Failed to update book" });
+  }
+});
+
 module.exports = router;
