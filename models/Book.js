@@ -8,6 +8,6 @@ const bookSchema = new mongoose.Schema({
   publishedDate: Date,
 });
 
-const Book = mongoose.model("Book", bookSchema);
+const Book = mongoose.model("Book", bookSchema); //turns the blueprint into a Book Model
 
 module.exports = Book;
