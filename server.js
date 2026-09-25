@@ -13,5 +13,5 @@ app.use(express.json());
 app.use("/api/books", bookRouter); //base URL creation
 
 app.listen(PORT, () => {
-  resizeBy.send(`Server running on port http://localhost:${PORT}`);
+  console.log(`Server running on port http://localhost:${PORT}`);
 });
